@@ -8,6 +8,7 @@
   <sprites name="sprites"/>
   <backgrounds name="background">
     <background>background\bg_tiles_nature</background>
+    <background>background\bg_space</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
