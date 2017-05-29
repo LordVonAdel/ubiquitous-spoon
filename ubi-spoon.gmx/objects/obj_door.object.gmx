@@ -106,7 +106,7 @@ if (abs(topen-openess)&lt;0.1){
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_sprite_part(spr_door,image_index,0,floor(openess*4)*16,16,16,x,y);
+            <string>draw_sprite_part(spr_door,image_index,floor(openess*3)*16,0,16,16,x,y);
 </string>
           </argument>
         </arguments>
