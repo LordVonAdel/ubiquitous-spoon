@@ -18,8 +18,10 @@
   <objects name="objects">
     <object>objects\obj_camera</object>
     <object>objects\obj_editor</object>
+    <object>objects\obj_init</object>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rm_init</room>
     <room>rooms\rm_main</room>
   </rooms>
   <help>
