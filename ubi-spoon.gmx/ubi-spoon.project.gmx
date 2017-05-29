@@ -14,28 +14,34 @@
       <sprite>sprites\spr_player_u</sprite>
       <sprite>sprites\spr_player_d</sprite>
     </sprites>
+    <sprites name="icons">
+      <sprite>sprites\spr_info_interactable</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
-    <background>background\bg_tiles_nature</background>
-    <background>background\bg_tiles_facility</background>
+    <backgrounds name="tilesets">
+      <background>background\bg_tiles_nature</background>
+      <background>background\bg_tiles_facility</background>
+      <background>background\bg_tiles_lab_chemistry</background>
+    </backgrounds>
     <background>background\bg_space</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
-    <script>scripts\script0.gml</script>
-    <script>scripts\blablub.gml</script>
+    <script>scripts\make_interactable.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\obj_camera</object>
     <object>objects\obj_editor</object>
     <object>objects\obj_init</object>
-    <object>objects\obj_player</object>
     <object>objects\obj_door</object>
+    <object>objects\obj_player</object>
     <object>objects\obj_collision</object>
     <object>objects\obj_interactable</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_init</room>
+    <room>rooms\rm_lab_chemisty</room>
     <room>rooms\rm_main</room>
   </rooms>
   <help>

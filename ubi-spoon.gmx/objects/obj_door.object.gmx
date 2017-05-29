@@ -3,9 +3,9 @@
   <spriteName>spr_door</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>5</depth>
   <persistent>0</persistent>
-  <parentName>obj_interactable</parentName>
+  <parentName>self</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -25,7 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>openess = 0;
+            <string>make_interactable();
+
+openess = 0;
 topen = 0; //target open
 image_index = 0;
 image_speed = 0;
@@ -74,7 +76,7 @@ if (openess == 1){
         </arguments>
       </action>
     </event>
-    <event eventtype="6" enumb="4">
+    <event eventtype="7" enumb="10">
       <action>
         <libid>1</libid>
         <id>603</id>
