@@ -11,7 +11,9 @@
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
-  <objects name="objects"/>
+  <objects name="objects">
+    <object>objects\obj_circle</object>
+  </objects>
   <help>
     <rtf>help.rtf</rtf>
   </help>
