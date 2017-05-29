@@ -12,6 +12,9 @@
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
+  <scripts name="scripts">
+    <script>scripts\blablub.gml</script>
+  </scripts>
   <objects name="objects">
     <object>objects\obj_circle</object>
     <object>objects\obj_square2</object>
