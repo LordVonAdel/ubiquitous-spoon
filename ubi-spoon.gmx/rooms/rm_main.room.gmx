@@ -56,6 +56,10 @@
     <instance objName="obj_player" x="736" y="240" name="inst_AD17AE16" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_door" x="656" y="256" name="inst_22EB8E60" locked="0" code="image_index = 1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_door" x="592" y="256" name="inst_5FF39091" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_collision" x="656" y="288" name="inst_1C804BF2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_collision" x="688" y="320" name="inst_BD502E96" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_collision" x="624" y="336" name="inst_CA4F3DEC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_collision" x="640" y="336" name="inst_5DFB43BC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bg_tiles_nature" x="576" y="288" w="16" h="16" xo="0" yo="0" id="10000100" name="inst_775DC28C" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
