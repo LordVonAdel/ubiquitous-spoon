@@ -9,6 +9,11 @@
     <sprite>sprites\spr_door</sprite>
     <sprite>sprites\spr_player</sprite>
     <sprite>sprites\spr_collision</sprite>
+    <sprites name="player">
+      <sprite>sprites\spr_player_r</sprite>
+      <sprite>sprites\spr_player_u</sprite>
+      <sprite>sprites\spr_player_d</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_tiles_nature</background>
