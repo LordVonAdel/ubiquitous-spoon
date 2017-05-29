@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>obj_interactable</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -30,6 +30,9 @@ topen = 0; //target open
 image_index = 0;
 image_speed = 0;
 locked = false;
+spd = 0.05;
+
+clip = instance_create(x,y,obj_collision);
 </string>
           </argument>
         </arguments>
@@ -53,13 +56,18 @@ locked = false;
           <argument>
             <kind>1</kind>
             <string>if (openess &gt; topen){
-  openess -= 0.1;
+  openess -= spd;
 }
 if (openess &lt; topen){
-  openess += 0.1;
+  openess += spd;
 }
-if (abs(topen-openess)&lt;0.1){
+if (abs(topen-openess)&lt;spd){
   openess = topen;
+}
+if (openess == 1){
+  clip.x = -16;
+}else{
+  clip.x = x;
 }
 </string>
           </argument>
