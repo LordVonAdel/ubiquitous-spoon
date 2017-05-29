@@ -11,6 +11,7 @@
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
+  <objects name="objects"/>
   <help>
     <rtf>help.rtf</rtf>
   </help>
