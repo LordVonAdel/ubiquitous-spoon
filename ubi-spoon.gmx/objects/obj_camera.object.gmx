@@ -89,6 +89,7 @@ view_yview[0] = y - view_hview[0] / 2;
   view_visible[0] = true;
   view_enabled = true;
 }
+room_speed = 60;
 </string>
           </argument>
         </arguments>
