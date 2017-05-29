@@ -15,7 +15,7 @@
     <script>scripts\blablub.gml</script>
   </scripts>
   <objects name="objects">
-    <object>objects\object3</object>
+    <object>objects\obj_camera</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_main</room>

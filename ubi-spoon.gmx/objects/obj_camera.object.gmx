@@ -55,8 +55,8 @@ var down = keyboard_check(vk_down) || keyboard_check(ord("S"));
 var left = -(keyboard_check(vk_left) || keyboard_check(ord("A")));
 var right = keyboard_check(vk_right) || keyboard_check(ord("D"));
 
-view_xview[0] = (left + right) * spd;
-view_yview[0] = (up + down) * spd;
+view_xview[0] += (left + right) * spd;
+view_yview[0] += (up + down) * spd;
 </string>
           </argument>
         </arguments>
