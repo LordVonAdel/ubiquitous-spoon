@@ -7,6 +7,7 @@
   <sounds name="sound"/>
   <sprites name="sprites">
     <sprite>sprites\spr_door</sprite>
+    <sprite>sprites\spr_door_wide</sprite>
     <sprite>sprites\spr_player</sprite>
     <sprite>sprites\spr_collision</sprite>
     <sprites name="player">
@@ -23,18 +24,37 @@
       <background>background\bg_tiles_nature</background>
       <background>background\bg_tiles_facility</background>
       <background>background\bg_tiles_lab_chemistry</background>
+      <background>background\bg_tiles_viewblocker</background>
     </backgrounds>
     <background>background\bg_space</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
+    <scripts name="language">
+      <script>scripts\lang_init.gml</script>
+      <script>scripts\lang_extern.gml</script>
+      <script>scripts\lang_add.gml</script>
+      <script>scripts\lang_get.gml</script>
+    </scripts>
+    <scripts name="bind">
+      <script>scripts\bind_init.gml</script>
+      <script>scripts\bind_check_pressed.gml</script>
+      <script>scripts\bind_check.gml</script>
+      <script>scripts\bind_bind.gml</script>
+      <script>scripts\bind_add.gml</script>
+      <script>scripts\bind_string.gml</script>
+    </scripts>
     <script>scripts\make_interactable.gml</script>
+    <script>scripts\interpolate.gml</script>
+    <script>scripts\shadow_line.gml</script>
   </scripts>
   <objects name="objects">
+    <objects name="interactables">
+      <object>objects\obj_door</object>
+    </objects>
     <object>objects\obj_camera</object>
     <object>objects\obj_editor</object>
     <object>objects\obj_init</object>
-    <object>objects\obj_door</object>
     <object>objects\obj_player</object>
     <object>objects\obj_collision</object>
     <object>objects\obj_interactable</object>
@@ -44,6 +64,10 @@
     <room>rooms\rm_lab_chemisty</room>
     <room>rooms\rm_main</room>
   </rooms>
+  <constants number="2">
+    <constant name="EASE_LINEAR">0</constant>
+    <constant name="EASE_EXPO">1</constant>
+  </constants>
   <help>
     <rtf>help.rtf</rtf>
   </help>

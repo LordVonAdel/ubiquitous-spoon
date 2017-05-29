@@ -25,7 +25,28 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>room_goto_next();
+            <string>lang_init();
+
+//stuff for keybinding
+bind_init();
+
+bind_add("walkUp");
+bind_add("walkDown");
+bind_add("walkRight");
+bind_add("walkLeft");
+bind_add("interact");
+
+bind_bind("walkUp","K"+string(vk_up));
+bind_bind("walkUp","K"+string(ord('W')));
+bind_bind("walkDown","K"+string(vk_down));
+bind_bind("walkDown","K"+string(ord('S')));
+bind_bind("walkRight","K"+string(vk_right));
+bind_bind("walkRight","K"+string(ord('D')));
+bind_bind("walkLeft","K"+string(vk_left));
+bind_bind("walkLeft","K"+string(ord('A')));
+bind_bind("interact","K"+string(vk_space));
+
+room_goto_next();
 </string>
           </argument>
         </arguments>

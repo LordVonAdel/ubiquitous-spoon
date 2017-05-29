@@ -25,11 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (point_distance(x+16,y+16,obj_player.x,obj_player.y) &lt; 32){
+            <string>if (obj_player.looking_inst == id){
   draw_sprite_ext(spr_info_interactable,0,x+16,y,1,1,0,c_white,(sin(current_time/200)+1)/4+0.5);
-  if (keyboard_check_pressed(vk_space)){
-    event_perform_object(master,ev_other,ev_user0)
-  }
 }
 </string>
           </argument>
