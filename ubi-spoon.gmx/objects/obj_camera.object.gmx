@@ -136,7 +136,12 @@ for(var i=max(floor(view_xview[0]/16),0); i&lt;min(view_wview[0]+view_xview[0],r
   {
     var cell = viewBlockGrid[# i, j];
     if (cell == 0){
-      shadow_line(i*16,j*16,i*16+16,j*16,obj_player.x,obj_player.y);
+      if (j*16 &lt; obj_player.y){
+        shadow_line(i*16,j*16,i*16+16,j*16,obj_player.x,obj_player.y);
+      }
+      if (j*16 &gt; obj_player.y-16){
+        shadow_line(i*16,j*16+16,i*16+16,j*16+16,obj_player.x,obj_player.y);
+      }
     }else if(cell == 1){
       shadow_line(i*16,j*16,i*16,j*16+16,obj_player.x,obj_player.y);
     }else if(cell == 2){
