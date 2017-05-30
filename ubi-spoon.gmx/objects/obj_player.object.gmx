@@ -73,8 +73,7 @@ else if (right){
   dir = 0;
 }
 else if(left){
-  sprite_index = spr_player_r;
-  image_xscale = -1;
+  sprite_index = spr_player_l;
   dir = 2;
 }else{
   image_index = 0;
