@@ -143,9 +143,9 @@ for(var i=max(floor(view_xview[0]/16),0); i&lt;min(view_wview[0]+view_xview[0],r
         shadow_line(i*16,j*16+16,i*16+16,j*16+16,obj_player.x,obj_player.y);
       }
     }else if(cell == 1){
-      shadow_line(i*16,j*16,i*16,j*16+16,obj_player.x,obj_player.y);
+      shadow_line(i*16+8,j*16,i*16+8,j*16+16,obj_player.x,obj_player.y);
     }else if(cell == 2){
-      shadow_line(i*16+16,j*16,i*16+16,j*16+16,obj_player.x,obj_player.y);
+      shadow_line(i*16+8,j*16,i*16+8,j*16+16,obj_player.x,obj_player.y);
     }else if(cell == 3){
       shadow_line(i*16,j*16,i*16+16,j*16,obj_player.x,obj_player.y);
       shadow_line(i*16,j*16,i*16,j*16+16,obj_player.x,obj_player.y);
