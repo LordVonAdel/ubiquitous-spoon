@@ -65,6 +65,7 @@
     <instance objName="obj_mirror" x="528" y="480" name="inst_6ED9C6EF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_mirror" x="432" y="480" name="inst_AAB06FAD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_mirror" x="432" y="384" name="inst_B4C0EE3A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_button" x="416" y="416" name="inst_8379DAA0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bg_tiles_facility" x="560" y="400" w="16" h="16" xo="0" yo="16" id="10001330" name="inst_7B078371" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
