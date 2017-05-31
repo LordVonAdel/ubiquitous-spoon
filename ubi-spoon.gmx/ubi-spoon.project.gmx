@@ -22,7 +22,9 @@
     </sprites>
     <sprite>sprites\spr_info_wall</sprite>
     <sprite>sprites\spr_info_door</sprite>
+    <sprite>sprites\spr_mirror_old</sprite>
     <sprite>sprites\spr_mirror</sprite>
+    <sprite>sprites\spr_laser_emitter</sprite>
   </sprites>
   <backgrounds name="background">
     <backgrounds name="tilesets">
@@ -58,6 +60,7 @@
       <object>objects\obj_door</object>
       <object>objects\obj_mirror</object>
     </objects>
+    <object>objects\obj_laser_emitter</object>
     <object>objects\obj_camera</object>
     <object>objects\obj_editor</object>
     <object>objects\obj_init</object>
