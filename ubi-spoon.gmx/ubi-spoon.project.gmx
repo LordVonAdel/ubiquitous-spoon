@@ -25,6 +25,7 @@
     <sprite>sprites\spr_mirror_old</sprite>
     <sprite>sprites\spr_mirror</sprite>
     <sprite>sprites\spr_laser_emitter</sprite>
+    <sprite>sprites\spr_button</sprite>
   </sprites>
   <backgrounds name="background">
     <backgrounds name="tilesets">
@@ -59,6 +60,7 @@
     <objects name="interactables">
       <object>objects\obj_door</object>
       <object>objects\obj_mirror</object>
+      <object>objects\obj_button</object>
     </objects>
     <object>objects\obj_laser_emitter</object>
     <object>objects\obj_camera</object>
@@ -76,10 +78,6 @@
     <room>rooms\rm_testroom</room>
     <room>rooms\rm_testroomB</room>
   </rooms>
-  <constants number="2">
-    <constant name="EASE_LINEAR">0</constant>
-    <constant name="EASE_EXPO">1</constant>
-  </constants>
   <help>
     <rtf>help.rtf</rtf>
   </help>
