@@ -131,6 +131,21 @@ for(var i=0; i&lt;array_length_1d(ids); i++){
             <kind>1</kind>
             <string>///field of view
 draw_set_color($121212);
+
+for (i=0; i&lt;instance_number(obj_wall); i+=1){
+  var inst = instance_find(obj_wall,i);
+  if (obj_player.y &gt; inst.y+8){
+    shadow_line(inst.x+3,inst.y,inst.bbox_right-3,inst.y,obj_player.x,obj_player.y);
+  }else{
+    shadow_line(inst.x+3,inst.y+3,inst.bbox_right-3,inst.y+3,obj_player.x,obj_player.y);
+  }
+  if (obj_player.x &lt; inst.x+8){
+    shadow_line(inst.x+3,inst.y,inst.x+3,inst.bbox_bottom,obj_player.x,obj_player.y);
+  }else{
+    shadow_line(inst.bbox_right-3,inst.y,inst.bbox_right-3,inst.bbox_bottom,obj_player.x,obj_player.y);
+  }
+};
+/*
 for(var i=max(floor(view_xview[0]/16),0); i&lt;min(view_wview[0]+view_xview[0],room_width)/16; i++){
   for (var j=max(floor(view_yview[0]/16),0); j&lt;min(view_hview[0]+view_yview[0],room_height)/16; j++)
   {
@@ -161,6 +176,7 @@ for(var i=max(floor(view_xview[0]/16),0); i&lt;min(view_wview[0]+view_xview[0],r
     }
   };
 }
+*/
 </string>
           </argument>
         </arguments>
