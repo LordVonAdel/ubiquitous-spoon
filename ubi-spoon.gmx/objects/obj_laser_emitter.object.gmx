@@ -3,7 +3,7 @@
   <spriteName>spr_laser_emitter</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>1</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -88,12 +88,13 @@ for (i=1; i&lt;len; i+=1)
 };
 
 draw_set_color(color);
+draw_set_alpha(0.4);
 
 for (i=1; i&lt;array_height_2d(points); i+=1)
 {
   draw_line_width(points[i-1,0]-1,points[i-1,1]-1,points[i,0]-1,points[i,1]-1,2)
 };
-
+draw_set_alpha(1);
 </string>
           </argument>
         </arguments>
