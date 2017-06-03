@@ -140,12 +140,16 @@ for (i=0; i&lt;instance_number(obj_wall); i+=1){
   var lOff = -3 + 6 * (inst.wall_left &lt; 0);
   var bOff = 16 - 24 * (inst.wall_bottom &gt; 0);
   
-  if (obj_player.y &gt; inst.y+8){
+  if (obj_player.y &gt; inst.y+16){
     shadow_line(inst.x+lOff,inst.y,(inst.bbox_right+1)-rOff,inst.y,obj_player.x,obj_player.y);
   }else{
     shadow_line(inst.x+lOff,inst.y+3,(inst.bbox_right+1)-rOff,inst.y+3,obj_player.x,obj_player.y);
   }
-  if (inst.image_yscale &gt; 1 || obj_player.y &lt; inst.y){
+  if (obj_player.y &lt; inst.y+8){ //hide corners
+    shadow_line(inst.x+3,inst.y+3,inst.x+3,inst.bbox_bottom+1,obj_player.x,obj_player.y);
+    shadow_line(inst.bbox_right-2,inst.y+3,inst.bbox_right-2,inst.bbox_bottom+1,obj_player.x,obj_player.y);
+  }
+  if (inst.image_yscale &gt; 1){
     if (obj_player.x &lt; inst.bbox_right){
       shadow_line(inst.x+lOff,inst.y+tOffset,inst.x+lOff,inst.bbox_bottom-bOff+1,obj_player.x,obj_player.y);
     }else{

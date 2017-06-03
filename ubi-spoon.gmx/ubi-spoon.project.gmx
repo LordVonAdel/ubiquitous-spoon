@@ -27,6 +27,9 @@
     <sprite>sprites\spr_laser_emitter</sprite>
     <sprite>sprites\spr_button</sprite>
     <sprite>sprites\spr_generator</sprite>
+    <sprite>sprites\spr_lamp_on</sprite>
+    <sprite>sprites\spr_lamp_off</sprite>
+    <sprite>sprites\spr_lamp_alarm</sprite>
   </sprites>
   <backgrounds name="background">
     <backgrounds name="tilesets">
@@ -35,6 +38,7 @@
       <background>background\bg_tiles_lab_chemistry</background>
       <background>background\bg_tiles_intro</background>
       <background>background\bg_tiles_viewblocker</background>
+      <background>background\bg_tiles_destruction</background>
     </backgrounds>
     <background>background\bg_space</background>
     <background>background\bg_grass</background>
@@ -75,6 +79,8 @@
     <object>objects\obj_interactable</object>
     <object>objects\obj_wall</object>
     <object>objects\obj_push</object>
+    <object>objects\obj_lamp</object>
+    <object>objects\obj_lamp_alarm</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_init</room>
