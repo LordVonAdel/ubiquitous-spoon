@@ -86,10 +86,10 @@ else if(left){
 hspd = (right - left) * spd;
 vspd = (down - up) * spd;
 
-/*if(!place_meeting(x + hspd, y + vspd, obj_collision)) {
-/*    x += hspd;
+if(!place_meeting(x + hspd, y + vspd, obj_collision) &amp;&amp; !place_meeting(x - hspd, y - vspd, obj_collision)) {
+    x += hspd;
     y += vspd;
-} else {*/
+} else {
     var mspd = spd;
     for(var i = 0; i &lt; mspd; i++) {
         //push
@@ -130,7 +130,7 @@ vspd = (down - up) * spd;
             }
         }
     }
-//}
+}
 
 
 
