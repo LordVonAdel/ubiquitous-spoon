@@ -74,6 +74,7 @@
     <object>objects\obj_collision</object>
     <object>objects\obj_interactable</object>
     <object>objects\obj_wall</object>
+    <object>objects\obj_push</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_init</room>
