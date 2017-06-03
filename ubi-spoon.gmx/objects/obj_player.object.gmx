@@ -59,22 +59,22 @@ var right = bind_check("walkRight");
 var pull = bind_check("pull");
 
 //animations
-if (up){
+if (up &amp;&amp; !down){
   sprite_index = spr_player_u;
   image_xscale = 1;
   dir = 1;
 }
-else if (down){
+else if (down &amp;&amp; !up){
   sprite_index = spr_player_d;
   image_xscale = 1;
   dir = 3;
 }
-else if (right){
+else if (right &amp;&amp; !left){
   sprite_index = spr_player_r;
   image_xscale = 1;
   dir = 0;
 }
-else if(left){
+else if(left &amp;&amp; !right){
   sprite_index = spr_player_l;
   dir = 2;
 }else{
