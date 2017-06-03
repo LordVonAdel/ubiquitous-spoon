@@ -35,6 +35,7 @@ bind_add("walkDown");
 bind_add("walkRight");
 bind_add("walkLeft");
 bind_add("interact");
+bind_add("pull");
 
 bind_bind("walkUp","K"+string(vk_up));
 bind_bind("walkUp","K"+string(ord('W')));
@@ -45,6 +46,7 @@ bind_bind("walkRight","K"+string(ord('D')));
 bind_bind("walkLeft","K"+string(vk_left));
 bind_bind("walkLeft","K"+string(ord('A')));
 bind_bind("interact","K"+string(vk_space));
+bind_bind("pull","K"+string(vk_control));
 
 room_goto_next();
 </string>

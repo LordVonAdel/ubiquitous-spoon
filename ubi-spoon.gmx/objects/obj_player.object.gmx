@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>obj_collision</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -56,6 +56,8 @@ var down = bind_check("walkDown");
 var left = bind_check("walkLeft");
 var right = bind_check("walkRight");
 
+var pull = bind_check("pull");
+
 //animations
 if (up){
   sprite_index = spr_player_u;
@@ -84,32 +86,51 @@ else if(left){
 hspd = (right - left) * spd;
 vspd = (down - up) * spd;
 
-if(!place_meeting(x + hspd, y + vspd, obj_collision)) {
-    x += hspd;
+/*if(!place_meeting(x + hspd, y + vspd, obj_collision)) {
+/*    x += hspd;
     y += vspd;
-} else {
-    for(var i = 0; i &lt; spd; i++) {
-        if(place_meeting(x + sign(hspd), y, obj_push)) {
-            hspd /= 2;
-            with(instance_place(x + hspd, y, obj_push)) {
-                if(!place_meeting(x + sign(other.hspd), y, obj_collision)) x += sign(other.hspd);
+} else {*/
+    var mspd = spd;
+    for(var i = 0; i &lt; mspd; i++) {
+        //push
+        if(pull) {
+            if(place_meeting(x + sign(hspd), y, obj_push)) {
+                mspd = spd/2;
+                with(instance_place(x + sign(hspd), y, obj_push)) {
+                    if(!place_meeting(x + sign(other.hspd), y, obj_collision)) x += sign(other.hspd);
+                }
+            }
+            
+            if(place_meeting(x, y + sign(vspd), obj_push)) {
+                mspd = spd/2;
+                with(instance_place(x, y + sign(vspd), obj_push)) {
+                    if(!place_meeting(x, y + sign(other.vspd), obj_collision)) y += sign(other.vspd);
+                }
             }
         }
         
-        if(place_meeting(x, y + sign(vspd), obj_push)) {
-            vspd /= 2;
-            with(instance_place(x, y + vspd, obj_push)) {
-                if(!place_meeting(x, y + sign(other.vspd), obj_collision)) y += sign(other.vspd);
-            }
-        }
-        
-        
-        
-        
+        //movement
         if(!place_meeting(x + sign(hspd), y, obj_collision)) x += sign(hspd);
         if(!place_meeting(x, y + sign(vspd), obj_collision)) y += sign(vspd);
+        
+        //pull
+        if(pull) {
+            if(place_meeting(x - 2*sign(hspd), y, obj_push)) {
+                mspd = spd/2;
+                with(instance_place(x - 2*sign(hspd), y, obj_push)) {
+                    if(!place_meeting(x + sign(other.hspd), y, obj_collision)) x += sign(other.hspd);
+                }
+            }
+            
+            if(place_meeting(x, y - 2*sign(vspd), obj_push)) {
+                mspd = spd/2;
+                with(instance_place(x, y - 2*sign(vspd), obj_push)) {
+                    if(!place_meeting(x, y + sign(other.vspd), obj_collision)) y += sign(other.vspd);
+                }
+            }
+        }
     }
-}
+//}
 
 
 
