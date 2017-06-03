@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-1</depth>
   <persistent>-1</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -134,15 +134,26 @@ draw_set_color($121212);
 
 for (i=0; i&lt;instance_number(obj_wall); i+=1){
   var inst = instance_find(obj_wall,i);
+  
+  var tOffset = -13 + 16 * (inst.wall_top &lt; 0) - 3 * (obj_player.y &gt; inst.y);
+  var rOff = -3 + 6 * (inst.wall_right &lt; 0);
+  var lOff = -3 + 6 * (inst.wall_left &lt; 0);
+  var bOff = 16 - 24 * (inst.wall_bottom &gt; 0);
+  
   if (obj_player.y &gt; inst.y+8){
-    shadow_line(inst.x+3,inst.y,inst.bbox_right-3,inst.y,obj_player.x,obj_player.y);
+    shadow_line(inst.x+lOff,inst.y,(inst.bbox_right+1)-rOff,inst.y,obj_player.x,obj_player.y);
   }else{
-    shadow_line(inst.x+3,inst.y+3,inst.bbox_right-3,inst.y+3,obj_player.x,obj_player.y);
+    shadow_line(inst.x+lOff,inst.y+3,(inst.bbox_right+1)-rOff,inst.y+3,obj_player.x,obj_player.y);
   }
-  if (obj_player.x &lt; inst.x+8){
-    shadow_line(inst.x+3,inst.y,inst.x+3,inst.bbox_bottom,obj_player.x,obj_player.y);
-  }else{
-    shadow_line(inst.bbox_right-3,inst.y,inst.bbox_right-3,inst.bbox_bottom,obj_player.x,obj_player.y);
+  if (inst.image_yscale &gt; 1 || obj_player.y &lt; inst.y){
+    if (obj_player.x &lt; inst.bbox_right){
+      shadow_line(inst.x+lOff,inst.y+tOffset,inst.x+lOff,inst.bbox_bottom-bOff+1,obj_player.x,obj_player.y);
+    }else{
+      shadow_line((inst.bbox_right+1)-rOff,inst.y+tOffset,(inst.bbox_right+1)-rOff,inst.bbox_bottom-bOff+1,obj_player.x,obj_player.y);
+    }
+  }
+  if (inst.image_yscale &gt; 1){
+    shadow_line(inst.x+lOff,inst.bbox_bottom - 15,(inst.bbox_right+1)-rOff,inst.bbox_bottom - 15,obj_player.x,obj_player.y);
   }
 };
 /*

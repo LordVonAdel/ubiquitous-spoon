@@ -26,6 +26,7 @@
     <sprite>sprites\spr_mirror</sprite>
     <sprite>sprites\spr_laser_emitter</sprite>
     <sprite>sprites\spr_button</sprite>
+    <sprite>sprites\spr_generator</sprite>
   </sprites>
   <backgrounds name="background">
     <backgrounds name="tilesets">
@@ -65,6 +66,7 @@
       <object>objects\obj_button</object>
     </objects>
     <object>objects\obj_laser_emitter</object>
+    <object>objects\obj_generator</object>
     <object>objects\obj_camera</object>
     <object>objects\obj_editor</object>
     <object>objects\obj_init</object>
@@ -76,6 +78,7 @@
   <rooms name="rooms">
     <room>rooms\rm_init</room>
     <rooms name="world">
+      <room>rooms\rm_level_A</room>
       <room>rooms\rm_intro</room>
     </rooms>
     <room>rooms\rm_lab_chemisty</room>
