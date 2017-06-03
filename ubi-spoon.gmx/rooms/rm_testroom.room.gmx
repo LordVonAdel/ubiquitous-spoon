@@ -74,6 +74,7 @@
     <instance objName="obj_collision" x="400" y="304" name="inst_96F571B7" locked="0" code="" scaleX="1" scaleY="4" colour="4294967295" rotation="0"/>
     <instance objName="obj_collision" x="416" y="352" name="inst_0A4274AE" locked="0" code="" scaleX="2" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_collision" x="480" y="352" name="inst_DB76166B" locked="0" code="" scaleX="2" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_button" x="512" y="480" name="inst_D1A5F52D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bg_tiles_facility" x="560" y="400" w="16" h="16" xo="0" yo="16" id="10001330" name="inst_7B078371" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

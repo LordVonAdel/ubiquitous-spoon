@@ -32,9 +32,11 @@
       <background>background\bg_tiles_nature</background>
       <background>background\bg_tiles_facility</background>
       <background>background\bg_tiles_lab_chemistry</background>
+      <background>background\bg_tiles_intro</background>
       <background>background\bg_tiles_viewblocker</background>
     </backgrounds>
     <background>background\bg_space</background>
+    <background>background\bg_grass</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -73,6 +75,9 @@
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_init</room>
+    <rooms name="world">
+      <room>rooms\rm_intro</room>
+    </rooms>
     <room>rooms\rm_lab_chemisty</room>
     <room>rooms\rm_main</room>
     <room>rooms\rm_testroom</room>
