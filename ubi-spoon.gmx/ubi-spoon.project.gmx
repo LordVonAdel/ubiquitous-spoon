@@ -81,6 +81,7 @@
     <object>objects\obj_push</object>
     <object>objects\obj_lamp</object>
     <object>objects\obj_lamp_alarm</object>
+    <object>objects\obj_powermanager</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_init</room>
