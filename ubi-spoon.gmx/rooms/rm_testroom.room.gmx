@@ -60,7 +60,7 @@
     <instance objName="obj_collision" x="592" y="448" name="inst_58754F51" locked="0" code="" scaleX="2" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_mirror" x="480" y="384" name="inst_626D9464" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_mirror" x="480" y="432" name="inst_6774DCD0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_laser_emitter" x="448" y="432" name="inst_8F132185" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_laser_emitter" x="400" y="432" name="inst_8F132185" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_mirror" x="480" y="464" name="inst_CEBB68B2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_mirror" x="416" y="416" name="inst_6ED9C6EF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_mirror" x="416" y="464" name="inst_AAB06FAD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
