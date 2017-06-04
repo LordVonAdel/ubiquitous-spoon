@@ -93,7 +93,7 @@ if(!place_meeting(x + hspd, y + vspd, obj_collision) &amp;&amp; !place_meeting(x
     var mspd = spd;
     for(var i = 0; i &lt; mspd; i++) {
         //push
-        if(pull) {
+        //if(pull) {
             if(place_meeting(x + sign(hspd), y, obj_push)) {
                 mspd = spd/2;
                 with(instance_place(x + sign(hspd), y, obj_push)) {
@@ -107,7 +107,7 @@ if(!place_meeting(x + hspd, y + vspd, obj_collision) &amp;&amp; !place_meeting(x
                     if(!place_meeting(x, y + sign(other.vspd), obj_collision)) y += sign(other.vspd);
                 }
             }
-        }
+        //}
         
         //movement
         if(!place_meeting(x + sign(hspd), y, obj_collision)) x += sign(hspd);
