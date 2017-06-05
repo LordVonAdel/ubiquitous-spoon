@@ -132,39 +132,37 @@ if (!prevent_controls){
           }
       }
   }
-  
-  
-  
-  //interaction
-  var inst = -1;
-  switch (dir){
-    case 0:
-      inst = collision_rectangle(x,y-8,x+16,y+8,obj_interactable,0,0);
-    break;
-    case 1:
-      inst = collision_rectangle(x-8,y-16,x+8,y,obj_interactable,0,0);
-    break;
-    case 2:
-      inst = collision_rectangle(x-16,y-8,x,y+16,obj_interactable,0,0);
-    break;
-    case 3:
-      inst = collision_rectangle(x-8,y,x+8,y+16,obj_interactable,0,0);
-    break;
-  }
-  
-  if (inst != -1){
-    if (instance_exists(inst)){
-      looking_inst = inst;
-      if (bind_check_pressed('interact')){
-        if (looking_inst.master != -1){
-          with (looking_inst.master){
-            event_user(0);
-          }
+}
+
+//interaction
+var inst = -1;
+switch (dir){
+  case 0:
+    inst = collision_rectangle(x,y-8,x+16,y+8,obj_interactable,0,0);
+  break;
+  case 1:
+    inst = collision_rectangle(x-8,y-16,x+8,y,obj_interactable,0,0);
+  break;
+  case 2:
+    inst = collision_rectangle(x-16,y-8,x,y+16,obj_interactable,0,0);
+  break;
+  case 3:
+    inst = collision_rectangle(x-8,y,x+8,y+16,obj_interactable,0,0);
+  break;
+}
+
+if (inst != -1){
+  if (instance_exists(inst)){
+    looking_inst = inst;
+    if (bind_check_pressed('interact')){
+      if (looking_inst.master != -1){
+        with (looking_inst.master){
+          event_user(0);
         }
       }
-    }else{
-      looking_inst = -1;
     }
+  }else{
+    looking_inst = -1;
   }
 }
 
