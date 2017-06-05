@@ -135,10 +135,36 @@ draw_set_color($121212);
 for (i=0; i&lt;instance_number(obj_wall); i+=1){
   var inst = instance_find(obj_wall,i);
   
-  var tOffset = -13 + 16 * (inst.wall_top &lt; 0) - 3 * (obj_player.y &gt; inst.y);
+  var tOff = -13 + 16 * (inst.wall_top &lt; 0) - 3 * (obj_player.y &gt; inst.y);
   var rOff = -3 + 6 * (inst.wall_right &lt; 0);
   var lOff = -3 + 6 * (inst.wall_left &lt; 0);
   var bOff = 16 - 24 * (inst.wall_bottom &gt; 0);
+  
+  //verfickte sichtfeld beschissene kacke, die voll komisch ist!
+  
+  shadow_line(inst.x+3,inst.y+3,inst.bbox_right-2,inst.y+3,obj_player.x,obj_player.y);
+  shadow_line(inst.x+3,inst.bbox_bottom-2,inst.bbox_right-2,inst.bbox_bottom-2,obj_player.x,obj_player.y);
+  shadow_line(inst.x+3,inst.y+3,inst.x+3,inst.bbox_bottom-2,obj_player.x,obj_player.y);
+  shadow_line(inst.bbox_right-2,inst.y+3,inst.bbox_right-2,inst.bbox_bottom-2,obj_player.x,obj_player.y);
+  
+  if (inst.wall_left &gt; 0){ //connect to the left
+    shadow_line(inst.x-3,inst.y+3,inst.x+3,inst.y+3,obj_player.x,obj_player.y);
+    shadow_line(inst.x-3,inst.bbox_bottom-2,inst.x+3,inst.bbox_bottom-2,obj_player.x,obj_player.y);  
+  }
+  if (inst.wall_right &gt; 0){ //connect to the right
+    shadow_line(inst.bbox_right-2,inst.y+3,inst.bbox_right+4,inst.y+3,obj_player.x,obj_player.y);
+    shadow_line(inst.bbox_right-2,inst.bbox_bottom-2,inst.bbox_right+4,inst.bbox_bottom-2,obj_player.x,obj_player.y);  
+  }
+  if (inst.wall_top &gt; 0){ //connect to the top
+    shadow_line(inst.x+3, inst.y-3, inst.x+3, inst.y+3,obj_player.x,obj_player.y);
+    shadow_line(inst.bbox_right-2, inst.y-3, inst.bbox_right-2, inst.y+3,obj_player.x,obj_player.y);
+  }
+  if (inst.wall_bottom &gt; 0){ //connect to the bottom
+    shadow_line(inst.x+3, inst.bbox_bottom-2, inst.x+3, inst.bbox_bottom+4,obj_player.x,obj_player.y);
+    shadow_line(inst.bbox_right-2, inst.bbox_bottom-2, inst.bbox_right-2, inst.bbox_bottom+4,obj_player.x,obj_player.y);
+  }
+  
+  /*
   
   if (obj_player.y &gt; inst.y+16){
     shadow_line(inst.x+lOff,inst.y,(inst.bbox_right+1)-rOff,inst.y,obj_player.x,obj_player.y);
@@ -151,15 +177,17 @@ for (i=0; i&lt;instance_number(obj_wall); i+=1){
   }
   if (inst.image_yscale &gt; 1){
     if (obj_player.x &lt; inst.bbox_right){
-      shadow_line(inst.x+lOff,inst.y+tOffset,inst.x+lOff,inst.bbox_bottom-bOff+1,obj_player.x,obj_player.y);
+      shadow_line(inst.x+lOff,inst.y+tOff,inst.x+lOff,inst.bbox_bottom-bOff+1,obj_player.x,obj_player.y);
     }else{
-      shadow_line((inst.bbox_right+1)-rOff,inst.y+tOffset,(inst.bbox_right+1)-rOff,inst.bbox_bottom-bOff+1,obj_player.x,obj_player.y);
+      shadow_line((inst.bbox_right+1)-rOff,inst.y+tOff,(inst.bbox_right+1)-rOff,inst.bbox_bottom-bOff+1,obj_player.x,obj_player.y);
     }
   }
   if (inst.image_yscale &gt; 1){
     shadow_line(inst.x+lOff,inst.bbox_bottom - 15,(inst.bbox_right+1)-rOff,inst.bbox_bottom - 15,obj_player.x,obj_player.y);
   }
+  //*/
 };
+
 /*
 for(var i=max(floor(view_xview[0]/16),0); i&lt;min(view_wview[0]+view_xview[0],room_width)/16; i++){
   for (var j=max(floor(view_yview[0]/16),0); j&lt;min(view_hview[0]+view_yview[0],room_height)/16; j++)
@@ -192,52 +220,6 @@ for(var i=max(floor(view_xview[0]/16),0); i&lt;min(view_wview[0]+view_xview[0],r
   };
 }
 */
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="9" enumb="90">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>room = rm_testroomB;
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="9" enumb="84">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>room = rm_testroom;
 </string>
           </argument>
         </arguments>

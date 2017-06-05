@@ -7,10 +7,6 @@
   <NewExtensions/>
   <sounds name="sound"/>
   <sprites name="sprites">
-    <sprite>sprites\spr_door</sprite>
-    <sprite>sprites\spr_door_wide</sprite>
-    <sprite>sprites\spr_info_player</sprite>
-    <sprite>sprites\spr_collision</sprite>
     <sprites name="player">
       <sprite>sprites\spr_player_r</sprite>
       <sprite>sprites\spr_player_l</sprite>
@@ -20,16 +16,24 @@
     <sprites name="icons">
       <sprite>sprites\spr_icon_interactable</sprite>
     </sprites>
-    <sprite>sprites\spr_info_wall</sprite>
-    <sprite>sprites\spr_info_door</sprite>
-    <sprite>sprites\spr_mirror_old</sprite>
-    <sprite>sprites\spr_mirror</sprite>
-    <sprite>sprites\spr_laser_emitter</sprite>
-    <sprite>sprites\spr_button</sprite>
-    <sprite>sprites\spr_generator</sprite>
-    <sprite>sprites\spr_lamp_on</sprite>
-    <sprite>sprites\spr_lamp_off</sprite>
-    <sprite>sprites\spr_lamp_alarm</sprite>
+    <sprites name="info">
+      <sprite>sprites\spr_info_wall</sprite>
+      <sprite>sprites\spr_info_door</sprite>
+      <sprite>sprites\spr_collision</sprite>
+      <sprite>sprites\spr_info_player</sprite>
+    </sprites>
+    <sprites name="world">
+      <sprite>sprites\spr_door_wide</sprite>
+      <sprite>sprites\spr_door</sprite>
+      <sprite>sprites\spr_lamp_off</sprite>
+      <sprite>sprites\spr_lamp_on</sprite>
+      <sprite>sprites\spr_mirror_old</sprite>
+      <sprite>sprites\spr_lamp_alarm</sprite>
+      <sprite>sprites\spr_laser_emitter</sprite>
+      <sprite>sprites\spr_button</sprite>
+      <sprite>sprites\spr_mirror</sprite>
+      <sprite>sprites\spr_generator</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <backgrounds name="tilesets">
@@ -59,29 +63,52 @@
       <script>scripts\bind_add.gml</script>
       <script>scripts\bind_string.gml</script>
     </scripts>
+    <scripts name="commands">
+      <script>scripts\cmd_print.gml</script>
+      <script>scripts\cmd_exit.gml</script>
+      <script>scripts\cmd_help.gml</script>
+      <script>scripts\cmd_test.gml</script>
+      <script>scripts\cmd_test2.gml</script>
+      <script>scripts\cmd_restart.gml</script>
+      <script>scripts\cmd_quit.gml</script>
+      <script>scripts\cmd_tp.gml</script>
+      <script>scripts\cmd_position.gml</script>
+      <script>scripts\cmd_version.gml</script>
+      <script>scripts\cmd_retry.gml</script>
+    </scripts>
     <script>scripts\make_interactable.gml</script>
     <script>scripts\interpolate.gml</script>
     <script>scripts\shadow_line.gml</script>
+    <script>scripts\console_print.gml</script>
+    <script>scripts\split.gml</script>
+    <script>scripts\split_console.gml</script>
+    <script>scripts\console_command_add.gml</script>
+    <script>scripts\console_command_execute.gml</script>
   </scripts>
+  <fonts name="fonts">
+    <font>fonts\ft_console</font>
+  </fonts>
   <objects name="objects">
-    <objects name="interactables">
+    <objects name="gameplay">
+      <object>objects\obj_player</object>
+      <object>objects\obj_powermanager</object>
+      <object>objects\obj_generator</object>
+      <object>objects\obj_laser_emitter</object>
       <object>objects\obj_door</object>
       <object>objects\obj_mirror</object>
       <object>objects\obj_button</object>
     </objects>
-    <object>objects\obj_laser_emitter</object>
-    <object>objects\obj_generator</object>
-    <object>objects\obj_camera</object>
-    <object>objects\obj_editor</object>
+    <objects name="decoration">
+      <object>objects\obj_lamp_alarm</object>
+      <object>objects\obj_lamp</object>
+    </objects>
+    <object>objects\obj_controller</object>
     <object>objects\obj_init</object>
-    <object>objects\obj_player</object>
+    <object>objects\obj_camera</object>
     <object>objects\obj_collision</object>
     <object>objects\obj_interactable</object>
-    <object>objects\obj_wall</object>
     <object>objects\obj_push</object>
-    <object>objects\obj_lamp</object>
-    <object>objects\obj_lamp_alarm</object>
-    <object>objects\obj_powermanager</object>
+    <object>objects\obj_wall</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_init</room>
