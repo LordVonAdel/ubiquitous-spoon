@@ -46,10 +46,44 @@ console_command_add("tp",cmd_tp,2,"Teleports the player","tp &lt;x || +x || -x&g
 console_command_add("position",cmd_position,0,"Gives you the current position of the player");
 console_command_add("version",cmd_version,0,"Shows the current game version and build date");
 console_command_add("retry",cmd_retry,0,"Restarts the room");
+console_command_add("set",cmd_set,2,"Sets an interface value","set &lt;key&gt; &lt;value&gt;");
+console_command_add("get",cmd_get,1,"Prints an interface value to the console","get &lt;key&gt;");
 
-
-globalvar prevent_controls;
+globalvar prevent_controls, interface;
 prevent_controls = false;
+interface = ds_map_create();
+interface[? "noclip"] = false;
+interface[? "lighting"] = true;
+interface[? "fov"] = true;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///executed the second tick after room start
+//lighting
+instance_create(0,0,obj_lighting);
+for (var i = 0; i&lt;instance_number(obj_light); i++){
+  var inst = instance_find(obj_light,i);
+  light_build(inst);
+}
 </string>
           </argument>
         </arguments>
@@ -128,6 +162,29 @@ prevent_controls = false;
     console_string = keyboard_string;
   }
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="4">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>alarm[0] = 1;
 </string>
           </argument>
         </arguments>

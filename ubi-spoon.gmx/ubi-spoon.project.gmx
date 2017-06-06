@@ -34,6 +34,7 @@
       <sprite>sprites\spr_mirror</sprite>
       <sprite>sprites\spr_generator</sprite>
     </sprites>
+    <sprite>sprites\spr_light</sprite>
   </sprites>
   <backgrounds name="background">
     <backgrounds name="tilesets">
@@ -75,6 +76,8 @@
       <script>scripts\cmd_position.gml</script>
       <script>scripts\cmd_version.gml</script>
       <script>scripts\cmd_retry.gml</script>
+      <script>scripts\cmd_set.gml</script>
+      <script>scripts\cmd_get.gml</script>
     </scripts>
     <script>scripts\make_interactable.gml</script>
     <script>scripts\interpolate.gml</script>
@@ -84,6 +87,7 @@
     <script>scripts\split_console.gml</script>
     <script>scripts\console_command_add.gml</script>
     <script>scripts\console_command_execute.gml</script>
+    <script>scripts\light_build.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\ft_console</font>
@@ -109,6 +113,8 @@
     <object>objects\obj_interactable</object>
     <object>objects\obj_push</object>
     <object>objects\obj_wall</object>
+    <object>objects\obj_lighting</object>
+    <object>objects\obj_light</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_init</room>

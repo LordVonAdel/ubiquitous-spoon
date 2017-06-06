@@ -25,7 +25,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>is_power_on = false;
+            <string>radius = 128;
+color = c_white;
+on = true;
+sprite = -1;
 </string>
           </argument>
         </arguments>

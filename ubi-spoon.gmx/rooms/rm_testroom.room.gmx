@@ -76,6 +76,7 @@
     <instance objName="obj_wall" x="416" y="352" name="inst_94EF74B5" locked="0" code="" scaleX="2" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="480" y="352" name="inst_0A77D430" locked="0" code="" scaleX="3" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_powermanager" x="416" y="304" name="inst_D995F2A2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_player" x="576" y="416" name="inst_9915B559" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bg_tiles_facility" x="560" y="400" w="16" h="16" xo="0" yo="16" id="10001330" name="inst_7B078371" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

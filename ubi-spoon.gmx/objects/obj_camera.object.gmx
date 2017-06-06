@@ -52,8 +52,8 @@ viewBlockGrid = ds_grid_create(1,1);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(keyboard_check_pressed(ord("F"))) {
-    window_set_fullscreen(!window_get_fullscreen());
+            <string>if(keyboard_check_pressed(vk_f11)) {
+  window_set_fullscreen(!window_get_fullscreen());
 }
 
 view_wview[0] = window_get_width() / 4;
@@ -132,61 +132,63 @@ for(var i=0; i&lt;array_length_1d(ids); i++){
             <string>///field of view
 draw_set_color($121212);
 
-for (i=0; i&lt;instance_number(obj_wall); i+=1){
-  var inst = instance_find(obj_wall,i);
-  
-  var tOff = -13 + 16 * (inst.wall_top &lt; 0) - 3 * (obj_player.y &gt; inst.y);
-  var rOff = -3 + 6 * (inst.wall_right &lt; 0);
-  var lOff = -3 + 6 * (inst.wall_left &lt; 0);
-  var bOff = 16 - 24 * (inst.wall_bottom &gt; 0);
-  
-  //verfickte sichtfeld beschissene kacke, die voll komisch ist!
-  
-  shadow_line(inst.x+3,inst.y+3,inst.bbox_right-2,inst.y+3,obj_player.x,obj_player.y);
-  shadow_line(inst.x+3,inst.bbox_bottom-2,inst.bbox_right-2,inst.bbox_bottom-2,obj_player.x,obj_player.y);
-  shadow_line(inst.x+3,inst.y+3,inst.x+3,inst.bbox_bottom-2,obj_player.x,obj_player.y);
-  shadow_line(inst.bbox_right-2,inst.y+3,inst.bbox_right-2,inst.bbox_bottom-2,obj_player.x,obj_player.y);
-  
-  if (inst.wall_left &gt; 0){ //connect to the left
-    shadow_line(inst.x-3,inst.y+3,inst.x+3,inst.y+3,obj_player.x,obj_player.y);
-    shadow_line(inst.x-3,inst.bbox_bottom-2,inst.x+3,inst.bbox_bottom-2,obj_player.x,obj_player.y);  
-  }
-  if (inst.wall_right &gt; 0){ //connect to the right
-    shadow_line(inst.bbox_right-2,inst.y+3,inst.bbox_right+4,inst.y+3,obj_player.x,obj_player.y);
-    shadow_line(inst.bbox_right-2,inst.bbox_bottom-2,inst.bbox_right+4,inst.bbox_bottom-2,obj_player.x,obj_player.y);  
-  }
-  if (inst.wall_top &gt; 0){ //connect to the top
-    shadow_line(inst.x+3, inst.y-3, inst.x+3, inst.y+3,obj_player.x,obj_player.y);
-    shadow_line(inst.bbox_right-2, inst.y-3, inst.bbox_right-2, inst.y+3,obj_player.x,obj_player.y);
-  }
-  if (inst.wall_bottom &gt; 0){ //connect to the bottom
-    shadow_line(inst.x+3, inst.bbox_bottom-2, inst.x+3, inst.bbox_bottom+4,obj_player.x,obj_player.y);
-    shadow_line(inst.bbox_right-2, inst.bbox_bottom-2, inst.bbox_right-2, inst.bbox_bottom+4,obj_player.x,obj_player.y);
-  }
-  
-  /*
-  
-  if (obj_player.y &gt; inst.y+16){
-    shadow_line(inst.x+lOff,inst.y,(inst.bbox_right+1)-rOff,inst.y,obj_player.x,obj_player.y);
-  }else{
-    shadow_line(inst.x+lOff,inst.y+3,(inst.bbox_right+1)-rOff,inst.y+3,obj_player.x,obj_player.y);
-  }
-  if (obj_player.y &lt; inst.y+8){ //hide corners
-    shadow_line(inst.x+3,inst.y+3,inst.x+3,inst.bbox_bottom+1,obj_player.x,obj_player.y);
-    shadow_line(inst.bbox_right-2,inst.y+3,inst.bbox_right-2,inst.bbox_bottom+1,obj_player.x,obj_player.y);
-  }
-  if (inst.image_yscale &gt; 1){
-    if (obj_player.x &lt; inst.bbox_right){
-      shadow_line(inst.x+lOff,inst.y+tOff,inst.x+lOff,inst.bbox_bottom-bOff+1,obj_player.x,obj_player.y);
-    }else{
-      shadow_line((inst.bbox_right+1)-rOff,inst.y+tOff,(inst.bbox_right+1)-rOff,inst.bbox_bottom-bOff+1,obj_player.x,obj_player.y);
+if (interface[? "fov"]){
+  for (i=0; i&lt;instance_number(obj_wall); i+=1){
+    var inst = instance_find(obj_wall,i);
+    
+    var tOff = -13 + 16 * (inst.wall_top &lt; 0) - 3 * (obj_player.y &gt; inst.y);
+    var rOff = -3 + 6 * (inst.wall_right &lt; 0);
+    var lOff = -3 + 6 * (inst.wall_left &lt; 0);
+    var bOff = 16 - 24 * (inst.wall_bottom &gt; 0);
+    
+    //verfickte sichtfeld beschissene kacke, die voll komisch ist!
+    
+    shadow_line(inst.x+3,inst.y+3,inst.bbox_right-2,inst.y+3,obj_player.x,obj_player.y);
+    shadow_line(inst.x+3,inst.bbox_bottom-2,inst.bbox_right-2,inst.bbox_bottom-2,obj_player.x,obj_player.y);
+    shadow_line(inst.x+3,inst.y+3,inst.x+3,inst.bbox_bottom-2,obj_player.x,obj_player.y);
+    shadow_line(inst.bbox_right-2,inst.y+3,inst.bbox_right-2,inst.bbox_bottom-2,obj_player.x,obj_player.y);
+    
+    if (inst.wall_left &gt; 0){ //connect to the left
+      shadow_line(inst.x-3,inst.y+3,inst.x+3,inst.y+3,obj_player.x,obj_player.y);
+      shadow_line(inst.x-3,inst.bbox_bottom-2,inst.x+3,inst.bbox_bottom-2,obj_player.x,obj_player.y);  
     }
-  }
-  if (inst.image_yscale &gt; 1){
-    shadow_line(inst.x+lOff,inst.bbox_bottom - 15,(inst.bbox_right+1)-rOff,inst.bbox_bottom - 15,obj_player.x,obj_player.y);
-  }
-  //*/
-};
+    if (inst.wall_right &gt; 0){ //connect to the right
+      shadow_line(inst.bbox_right-2,inst.y+3,inst.bbox_right+4,inst.y+3,obj_player.x,obj_player.y);
+      shadow_line(inst.bbox_right-2,inst.bbox_bottom-2,inst.bbox_right+4,inst.bbox_bottom-2,obj_player.x,obj_player.y);  
+    }
+    if (inst.wall_top &gt; 0){ //connect to the top
+      shadow_line(inst.x+3, inst.y-3, inst.x+3, inst.y+3,obj_player.x,obj_player.y);
+      shadow_line(inst.bbox_right-2, inst.y-3, inst.bbox_right-2, inst.y+3,obj_player.x,obj_player.y);
+    }
+    if (inst.wall_bottom &gt; 0){ //connect to the bottom
+      shadow_line(inst.x+3, inst.bbox_bottom-2, inst.x+3, inst.bbox_bottom+4,obj_player.x,obj_player.y);
+      shadow_line(inst.bbox_right-2, inst.bbox_bottom-2, inst.bbox_right-2, inst.bbox_bottom+4,obj_player.x,obj_player.y);
+    }
+    
+    /*
+    
+    if (obj_player.y &gt; inst.y+16){
+      shadow_line(inst.x+lOff,inst.y,(inst.bbox_right+1)-rOff,inst.y,obj_player.x,obj_player.y);
+    }else{
+      shadow_line(inst.x+lOff,inst.y+3,(inst.bbox_right+1)-rOff,inst.y+3,obj_player.x,obj_player.y);
+    }
+    if (obj_player.y &lt; inst.y+8){ //hide corners
+      shadow_line(inst.x+3,inst.y+3,inst.x+3,inst.bbox_bottom+1,obj_player.x,obj_player.y);
+      shadow_line(inst.bbox_right-2,inst.y+3,inst.bbox_right-2,inst.bbox_bottom+1,obj_player.x,obj_player.y);
+    }
+    if (inst.image_yscale &gt; 1){
+      if (obj_player.x &lt; inst.bbox_right){
+        shadow_line(inst.x+lOff,inst.y+tOff,inst.x+lOff,inst.bbox_bottom-bOff+1,obj_player.x,obj_player.y);
+      }else{
+        shadow_line((inst.bbox_right+1)-rOff,inst.y+tOff,(inst.bbox_right+1)-rOff,inst.bbox_bottom-bOff+1,obj_player.x,obj_player.y);
+      }
+    }
+    if (inst.image_yscale &gt; 1){
+      shadow_line(inst.x+lOff,inst.bbox_bottom - 15,(inst.bbox_right+1)-rOff,inst.bbox_bottom - 15,obj_player.x,obj_player.y);
+    }
+    //*/
+  };
+}
 
 /*
 for(var i=max(floor(view_xview[0]/16),0); i&lt;min(view_wview[0]+view_xview[0],room_width)/16; i++){
