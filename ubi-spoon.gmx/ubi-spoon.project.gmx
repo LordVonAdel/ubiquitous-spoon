@@ -122,9 +122,9 @@
       <room>rooms\rm_level_A</room>
       <room>rooms\rm_intro</room>
     </rooms>
+    <room>rooms\rm_testroom</room>
     <room>rooms\rm_lab_chemisty</room>
     <room>rooms\rm_main</room>
-    <room>rooms\rm_testroom</room>
     <room>rooms\rm_testroomB</room>
   </rooms>
   <help>

@@ -87,7 +87,7 @@ if (!prevent_controls){
   hspd = (right - left) * spd;
   vspd = (down - up) * spd;
   
-  if(!place_meeting(x + hspd, y + vspd, obj_collision) &amp;&amp; !place_meeting(x - hspd, y - vspd, obj_collision)) {
+  if((!place_meeting(x + hspd, y + vspd, obj_collision) &amp;&amp; !place_meeting(x - hspd, y - vspd, obj_collision) || real(interface[? "noclip"]))) {
       x += hspd;
       y += vspd;
   } else {

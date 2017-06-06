@@ -63,7 +63,7 @@
     <instance objName="obj_wall" x="416" y="1024" name="inst_AAB24B95" locked="0" code="" scaleX="6" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="544" y="1024" name="inst_6D8628EA" locked="0" code="" scaleX="12" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="560" y="1040" name="inst_019065FA" locked="0" code="" scaleX="1" scaleY="14" colour="4294967295" rotation="0"/>
-    <instance objName="obj_wall" x="416" y="736" name="inst_F9FEC870" locked="0" code="" scaleX="16" scaleY="15" colour="4294967295" rotation="0"/>
+    <instance objName="obj_wall" x="416" y="736" name="inst_F9FEC870" locked="0" code="" scaleX="16" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_door" x="512" y="1104" name="inst_55F931DF" locked="0" code="sprite_index = spr_door_wide;&#xA;w = 32;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="496" y="1104" name="inst_2F544C88" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="544" y="1104" name="inst_3F766CD0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -112,6 +112,9 @@
     <instance objName="obj_lamp" x="320" y="1104" name="inst_92F3B0EA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_lamp" x="256" y="1104" name="inst_65793C49" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_lamp" x="448" y="960" name="inst_B584D444" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_wall" x="416" y="960" name="inst_7B82B773" locked="0" code="" scaleX="16" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_wall" x="416" y="752" name="inst_F16F9B86" locked="0" code="" scaleX="16" scaleY="13" colour="4294967295" rotation="0"/>
+    <instance objName="obj_light" x="496" y="640" name="inst_2D67957E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bg_tiles_facility" x="512" y="1248" w="16" h="16" xo="0" yo="16" id="10001967" name="inst_3C75F809" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

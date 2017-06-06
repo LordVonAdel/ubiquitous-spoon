@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>lightsurf = surface_create(view_wview[0], view_hview[0]);
+            <string>lightsurf = surface_create(view_wview[0]+2, view_hview[0]+2);
 </string>
           </argument>
         </arguments>
@@ -97,22 +97,22 @@
             <string>if (interface[? "lighting"]){
   draw_set_color(c_black)
   if (!surface_exists(lightsurf)){
-    lightsurf = surface_create(view_wview[0], view_hview[0]);
+    lightsurf = surface_create(view_wview[0]+2, view_hview[0]+2);
   }
   surface_set_target(lightsurf);
-  draw_rectangle(0,0,view_wview[0],view_hview[0],false);
+  draw_rectangle(0,0,view_wview[0]+2,view_hview[0]+2,false);
   var inst;
   draw_set_blend_mode(bm_subtract);
   for (var i=0; i&lt;instance_number(obj_light); i++){
     inst = instance_find(obj_light,i);
     if (inst.on &amp;&amp; inst.sprite != -1){
-      draw_sprite(inst.sprite,0,inst.x-view_xview[0],inst.y-view_yview[0]);
+      draw_sprite(inst.sprite,0,inst.x-view_xview[0]-1,inst.y-view_yview[0]-1);
     }
   }
   draw_set_blend_mode(bm_normal);
   
   surface_reset_target();
-  draw_surface(lightsurf, view_xview[0], view_yview[0]);
+  draw_surface(lightsurf, view_xview[0]-1, view_yview[0]-1);
 }
 </string>
           </argument>

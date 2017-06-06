@@ -132,7 +132,7 @@ for(var i=0; i&lt;array_length_1d(ids); i++){
             <string>///field of view
 draw_set_color($121212);
 
-if (interface[? "fov"]){
+if (real(interface[? "fov"])){
   for (i=0; i&lt;instance_number(obj_wall); i+=1){
     var inst = instance_find(obj_wall,i);
     
