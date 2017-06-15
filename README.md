@@ -1,1 +1,1 @@
-Hallo Welt!
+A GameMaker project
